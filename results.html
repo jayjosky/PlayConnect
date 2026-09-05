@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results & Standings — PlayConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <p class="wordmark">Play<span>Connect</span></p>
+    <p class="tagline">Fields, teams, matches, and results — Kalobeyei</p>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="fields.html">Fields</a>
+      <a href="teams.html">Teams</a>
+      <a href="matches.html">Matches</a>
+      <a href="results.html" class="active">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Results</h1>
+  <p class="section-note">Completed matches, most recent first.</p>
+  <ul class="sheet" id="results-list"></ul>
+
+  <div id="standings-tables"></div>
+
+  <footer class="site">
+    Standings are calculated automatically from results — 3 points for a win, 1 for a draw. Add a result in <code>js/data.js</code> once a match is complete.
+  </footer>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>renderResults();</script>
+</body>
+</html>

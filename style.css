@@ -1,0 +1,151 @@
+/* PlayConnect — shared styles
+   Palette:
+   --paper   #EFEEE6  sun-bleached background
+   --ink     #22282E  charcoal text
+   --pitch   #1F6F54  primary accent (football / CTAs)
+   --clay    #C97A3D  secondary accent (basketball / alerts)
+   --sky     #3E6E8E  tertiary accent (volleyball / info)
+   --line    #D8D2C2  hairline borders
+   Fonts: system stack only — no webfont downloads, matters on slow data.
+*/
+
+:root {
+  --paper: #EFEEE6;
+  --ink: #22282E;
+  --pitch: #1F6F54;
+  --clay: #C97A3D;
+  --sky: #3E6E8E;
+  --line: #D8D2C2;
+  --paper-raised: #F7F6F1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+a { color: var(--pitch); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 48px; }
+
+/* Header / nav */
+header.site {
+  border-bottom: 3px solid var(--ink);
+  background: var(--paper-raised);
+}
+header.site .wrap { padding-top: 18px; padding-bottom: 0; }
+.wordmark {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+}
+.wordmark span { color: var(--pitch); }
+.tagline { margin: 0 0 14px; font-size: 0.92rem; color: #55605c; }
+
+nav.tabs { display: flex; gap: 4px; overflow-x: auto; }
+nav.tabs a {
+  display: block;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+nav.tabs a.active { color: var(--pitch); border-bottom-color: var(--pitch); }
+nav.tabs a:hover { text-decoration: none; border-bottom-color: var(--line); }
+
+main { padding-top: 20px; }
+
+h1 { font-size: 1.3rem; margin: 0 0 4px; }
+h2 { font-size: 1.05rem; margin: 28px 0 10px; }
+.section-note { margin: 0 0 16px; color: #55605c; font-size: 0.9rem; }
+
+/* Fixture-sheet style list (used for matches, fields, teams, results) */
+ul.sheet { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+ul.sheet li {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0 12px 12px;
+  border-left: 4px solid var(--line);
+}
+ul.sheet li.sport-football { border-left-color: var(--pitch); }
+ul.sheet li.sport-basketball { border-left-color: var(--clay); }
+ul.sheet li.sport-volleyball { border-left-color: var(--sky); }
+
+.row-top { display: flex; justify-content: space-between; gap: 10px; font-size: 0.85rem; color: #55605c; }
+.row-main { font-weight: 700; margin-top: 2px; }
+.row-sub { font-size: 0.88rem; color: #444d49; margin-top: 2px; }
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+}
+.sport-football .tag { color: var(--pitch); }
+.sport-basketball .tag { color: var(--clay); }
+.sport-volleyball .tag { color: var(--sky); }
+
+.status-cancelled { color: #a33; font-weight: 700; }
+.status-scheduled { color: var(--pitch); font-weight: 700; }
+.status-completed { color: #55605c; font-weight: 700; }
+
+/* Filter bar */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.filters button {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+}
+.filters button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* Quick links / home */
+.quicklinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.quicklinks a {
+  font-weight: 700;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+.quicklinks a:hover { background: var(--pitch); }
+
+/* Standings table */
+table.standings { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+table.standings th, table.standings td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--line);
+}
+table.standings th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: #55605c; }
+
+.empty {
+  padding: 18px 12px;
+  border: 1px dashed var(--line);
+  color: #55605c;
+  font-size: 0.92rem;
+}
+
+footer.site {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: #55605c;
+}

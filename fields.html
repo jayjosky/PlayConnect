@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fields — PlayConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <p class="wordmark">Play<span>Connect</span></p>
+    <p class="tagline">Fields, teams, matches, and results — Kalobeyei</p>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="fields.html" class="active">Fields</a>
+      <a href="teams.html">Teams</a>
+      <a href="matches.html">Matches</a>
+      <a href="results.html">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Fields</h1>
+  <p class="section-note">Every known playing field, its location, and current condition.</p>
+  <div class="filters" id="field-filters"></div>
+  <ul class="sheet" id="fields-list"></ul>
+
+  <footer class="site">
+    Know a field that's missing, or one that's been lost to new housing? Update <code>js/data.js</code> so the record stays accurate.
+  </footer>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>renderFields();</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matches — PlayConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <p class="wordmark">Play<span>Connect</span></p>
+    <p class="tagline">Fields, teams, matches, and results — Kalobeyei</p>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="fields.html">Fields</a>
+      <a href="teams.html">Teams</a>
+      <a href="matches.html" class="active">Matches</a>
+      <a href="results.html">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Matches</h1>
+  <p class="section-note">All scheduled, completed, and cancelled matches, earliest first.</p>
+  <div class="filters" id="match-filters"></div>
+  <ul class="sheet" id="matches-list"></ul>
+
+  <footer class="site">
+    Arranging a match? Add it to <code>js/data.js</code> once both teams and a free field slot are confirmed.
+  </footer>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>renderMatches();</script>
+</body>
+</html>
